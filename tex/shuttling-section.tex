@@ -1,0 +1,129 @@
+% Drop-in completion of the empty "Shuttling and Landau-Zener tunnelling"
+% section of orswan/opticalLattices Optical-Lattices.tex, written to match the
+% manuscript's notation (natural units hbar = 1, 2m = 1) and style.
+% Numerics validating eq. (LZloss) below: lz_sweep.py driving lattice1D.py.
+
+\section{Shuttling and Landau-Zener tunnelling}
+
+We now analyse what happens when the quasimomentum sweeps through a
+band-edge degeneracy too quickly for adiabaticity to hold.  The result is a
+closed-form expression for the fraction of atoms lost during a shuttle,
+which sets the practical limit on how fast atoms can be moved.
+
+\subsection{Reduction to two levels}
+
+Specialize to a minimal 1D lattice with wavenumber $k$ and depth $A$, and
+consider the swept Hamiltonian of eq. (\ref{sweepH}) restricted to the
+quasimomentum subspace $\mathcal{S}_q$:
+$$H_{Q(t)} = \left(p - Q(t)\right)^2 + A\cos(kx), \qquad Q(t) = m\,\dot a(t).$$
+(For gravitational driving, $Q(t) = \half g t$ in our units, by the results of
+the previous section.)  In the momentum basis $\left|q + nk\right>$ the kinetic
+term is diagonal with entries $\left(P_n - Q(t)\right)^2$, $P_n := q + nk$, and
+the lattice couples neighboring momentum states with matrix element $A/2$ ---
+this is precisely the tridiagonal structure noted in the momentum space section.
+
+Tunnelling can only occur where two diabatic (lattice-off) energies cross, i.e.
+where $\left(P_n - Q\right)^2 = \left(P_{n+1} - Q\right)^2$, which happens when
+$Q - q$ is a half-integer multiple of $k$: the zone edge.  Near such a crossing
+all other momentum states are separated by energies of order $k^2$, so provided
+$A \ll k^2$ we may project onto the two crossing states.  The projected
+Hamiltonian is
+$$H_2(t) = \begin{bmatrix} \left(P_n - Q(t)\right)^2 & A/2 \\ A/2 &
+\left(P_{n+1} - Q(t)\right)^2 \end{bmatrix},$$
+and the diabatic splitting
+$$\Delta E(t) = \left(P_{n+1}-Q(t)\right)^2 - \left(P_n-Q(t)\right)^2
+= k\left(P_n + P_{n+1} - 2Q(t)\right)$$
+passes through zero linearly, with slew rate
+$$\left|\frac{d\,\Delta E}{dt}\right| = 2k\,|\dot Q|.$$
+At the crossing the adiabatic eigenvalues avoid each other by the gap $A$
+(twice the coupling $A/2$), which is the band gap between the two lowest bands
+at the zone edge --- consistent with first-order degenerate perturbation theory
+in the band structure picture, valid in the same regime $A \ll k^2$.
+
+\subsection{The Landau-Zener formula}
+
+A two-level system with constant coupling $V$ whose diabatic splitting is swept
+linearly through zero at rate $\alpha = |d\,\Delta E/dt|$ is the classic
+Landau-Zener problem, with diabatic transition probability
+$$P_{LZ} = \exp\left(-\frac{2\pi V^2}{\alpha}\right).$$
+(I will not rederive this here; the standard derivation proceeds via
+parabolic cylinder functions.)  With $V = A/2$ and $\alpha = 2k|\dot Q|$ we
+obtain the loss per zone-edge crossing:
+\begin{equation}
+P_{\text{tunnel}} = \exp\left(-\frac{\pi A^2}{4 k |\dot Q|}\right)
+\;\xrightarrow{\;Q = \frac{1}{2}gt\;}\;
+\exp\left(-\frac{\pi A^2}{2 k g}\right)
+\label{LZloss}
+\end{equation}
+A diabatic transition here means the atom keeps its momentum while the lattice
+sweeps on without it: the atom has slipped out of the lattice.  (Strictly it
+is excitation to a higher band of the swept lattice; for a monotonic shuttle
+this is loss because, as shown below, the left-behind branch never rejoins
+the transported one.)  The
+adiabatic fraction $1 - P_{\text{tunnel}}$ is carried along --- each crossing
+transfers momentum $k$ (in units where $\hbar=1$) per atom, which is how a swept lattice
+accelerates atoms in the first place.
+
+Two limits.  Deep lattice or gentle sweep
+($A^2 \gg k\dot Q$): losses are exponentially small and the lattice shuttles
+faithfully.  Shallow lattice or hard sweep ($A^2 \ll k\dot Q$): essentially
+everything tunnels, and the lattice slides through the atoms leaving them
+(almost) untouched.  Note the figure of merit is $A^2/\dot Q$, so halving the
+lattice depth requires quartering the acceleration to hold losses fixed.
+
+\subsection{Numerical check}
+
+Equation (\ref{LZloss}) is a two-level approximation to an infinite-level
+problem, so it should be checked.  The script \texttt{lz\_sweep.py} drives the
+momentum-space solver of \texttt{lattice1D.py} (which integrates the full
+$(2n+1)$-state Schr\"odinger equation with no two-level reduction) through a
+single gravity-driven zone-edge crossing, then measures the ground-band
+survival by projecting the final state onto band eigenstates in the
+lattice's co-moving frame.  Across
+lattice depths $A = aa\,g_0$ with $aa \in [2, 23]$ and drives
+$g \in \{2, 4, 8\}\,g_0$ (where $g_0 = 0.0295$ is the code's strontium
+gravity unit; the dimensionless exponent $\pi A^2/2kg$ spans
+$[0.012, 6.1]$) --- losses spanning $0.2\%$ to $99\%$ --- the
+simulated loss matches eq. (\ref{LZloss}) with absolute deviations between
+$10^{-5}$ and $10^{-2}$ (largest at the deepest lattices and hardest drives;
+relative deviations reach $\sim 8\%$ at the smallest losses, where the
+denominator is tiny), consistent in magnitude with
+finite-sweep endpoint effects and numerical truncation (the cause was not
+isolated; finite-time LZ corrections are oscillatory, so no claim is made
+about their sign).  Concretely, the projection observable is the instantaneous ground band of
+the swept Hamiltonian $H_{Q_f} = (p-Q_f)^2 + V$ within the fixed
+quasimomentum sector; \texttt{SFrame} in \texttt{lattice1D.py} implements
+exactly this by transforming to the co-moving gauge and projecting there ---
+equivalent statements in two frames, and \emph{not} a projection onto the
+eigenstates of the unshifted $H_0$.
+
+\subsection{Multiple crossings and where the formula breaks}
+
+For a sustained sweep the quasimomentum crosses a zone edge once per Bloch
+period, and if the crossings are well separated the losses compound
+geometrically: after $N$ crossings the surviving fraction is
+$\left(1 - P_{\text{tunnel}}\right)^N$.  For a monotonic sweep this
+compounding needs less than one might fear: successive crossings involve
+\emph{different} momentum pairs, so amplitude left behind at one crossing
+never meets the transported branch again --- the outgoing channels are
+distinct, and no interference or dephasing assumption is required.  What the
+compounding does require is that the crossings be well separated, so each is
+an isolated Landau-Zener event; when the sweep is hard enough that the
+transition windows of successive crossings overlap, the isolated-crossing
+picture itself breaks down.  The full solver captures that regime; the
+formula does not.  (A non-monotonic sweep --- reversals, or added couplings
+that close a loop in momentum space --- can recombine amplitudes and produce
+genuine St\"uckelberg interference; none is present here.)  It likewise breaks when $A \sim k^2$, where the two-level
+projection fails because the gap to the second excited band is no longer
+large compared to $A$.
+
+An interesting question in the spirit of the earlier sections: given a fixed
+total momentum transfer and a fixed time budget, what trajectory $a(t)$
+minimizes total tunnelling loss?  Equation (\ref{LZloss}) says loss is incurred
+almost entirely near the crossings, suggesting a bang-bang profile --- sweep
+hard between crossings, ease through them --- with the optimal schedule set
+by a trade-off between the LZ exponent at each crossing and the sprint speed
+required between crossings to meet the time budget (the number of crossings
+itself is fixed by the total momentum transfer).
+I leave this optimization, which is directly relevant to large momentum
+transfer atom optics, for future work.

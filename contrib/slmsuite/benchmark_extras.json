@@ -1,0 +1,305 @@
+{
+  "vs_remove_vortices": {
+    "flattop": {
+      "random": {
+        "vortices": 299,
+        "ripple": 0.3500893712043762,
+        "efficiency": 0.9264684915542603,
+        "time_s": 0.33
+      },
+      "random+devortex": {
+        "vortices": 299,
+        "ripple": 0.3500893712043762,
+        "efficiency": 0.9264684915542603,
+        "time_s": 0.33
+      },
+      "quadratic": {
+        "vortices": 32,
+        "ripple": 0.3399064242839813,
+        "efficiency": 0.9588661789894104,
+        "time_s": 0.31
+      },
+      "quadratic+devortex": {
+        "vortices": 32,
+        "ripple": 0.3399064242839813,
+        "efficiency": 0.9588661789894104,
+        "time_s": 0.31
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.17764613032341003,
+        "efficiency": 0.9805320501327515,
+        "time_s": 12.61
+      },
+      "quadratic+devortex_equal_time": {
+        "vortices": 0,
+        "ripple": 0.20740802586078644,
+        "efficiency": 0.9785681962966919,
+        "time_s": 12.19,
+        "iters": 2019
+      }
+    },
+    "flattop/MRAF": {
+      "random": {
+        "vortices": 346,
+        "ripple": 0.2896878123283386,
+        "efficiency": 0.7867341637611389,
+        "time_s": 0.23
+      },
+      "random+devortex": {
+        "vortices": 346,
+        "ripple": 0.2896878123283386,
+        "efficiency": 0.7867341637611389,
+        "time_s": 0.23
+      },
+      "quadratic": {
+        "vortices": 24,
+        "ripple": 0.25296899676322937,
+        "efficiency": 0.8152387142181396,
+        "time_s": 0.22
+      },
+      "quadratic+devortex": {
+        "vortices": 24,
+        "ripple": 0.25296899676322937,
+        "efficiency": 0.8152387142181396,
+        "time_s": 0.22
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.17766204476356506,
+        "efficiency": 0.979738175868988,
+        "time_s": 12.67
+      },
+      "quadratic+devortex_equal_time": {
+        "vortices": 6,
+        "ripple": 0.1813315600156784,
+        "efficiency": 0.9238759279251099,
+        "time_s": 12.59,
+        "iters": 2927
+      }
+    },
+    "ring/MRAF": {
+      "random": {
+        "vortices": 115,
+        "ripple": 0.4135211110115051,
+        "efficiency": 0.6809569597244263,
+        "time_s": 0.23
+      },
+      "random+devortex": {
+        "vortices": 115,
+        "ripple": 0.4135211110115051,
+        "efficiency": 0.6809569597244263,
+        "time_s": 0.23
+      },
+      "quadratic": {
+        "vortices": 8,
+        "ripple": 0.36749571561813354,
+        "efficiency": 0.8229190111160278,
+        "time_s": 0.21
+      },
+      "quadratic+devortex": {
+        "vortices": 8,
+        "ripple": 0.36749571561813354,
+        "efficiency": 0.8229190111160278,
+        "time_s": 0.21
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.3647441864013672,
+        "efficiency": 0.886191189289093,
+        "time_s": 8.81
+      },
+      "quadratic+devortex_equal_time": {
+        "vortices": 6,
+        "ripple": 0.36356332898139954,
+        "efficiency": 0.8696523904800415,
+        "time_s": 9.04,
+        "iters": 2124
+      }
+    }
+  },
+  "cost_frontier": [
+    {
+      "coarse": 8,
+      "iters": 300,
+      "seed_s": 12.41,
+      "vortices": 0,
+      "ripple": 0.17764611542224884,
+      "efficiency": 0.9805320501327515
+    },
+    {
+      "coarse": 8,
+      "iters": 100,
+      "seed_s": 4.15,
+      "vortices": 0,
+      "ripple": 0.17763929069042206,
+      "efficiency": 0.9805314540863037
+    },
+    {
+      "coarse": 8,
+      "iters": 40,
+      "seed_s": 1.68,
+      "vortices": 0,
+      "ripple": 0.17735934257507324,
+      "efficiency": 0.9805102944374084
+    },
+    {
+      "coarse": 12,
+      "iters": 300,
+      "seed_s": 2.44,
+      "vortices": 0,
+      "ripple": 0.1695343255996704,
+      "efficiency": 0.980637788772583
+    },
+    {
+      "coarse": 12,
+      "iters": 100,
+      "seed_s": 0.82,
+      "vortices": 0,
+      "ripple": 0.1695733368396759,
+      "efficiency": 0.9806370735168457
+    },
+    {
+      "coarse": 12,
+      "iters": 40,
+      "seed_s": 0.33,
+      "vortices": 0,
+      "ripple": 0.16934822499752045,
+      "efficiency": 0.9806317090988159
+    },
+    {
+      "coarse": 16,
+      "iters": 300,
+      "seed_s": 0.92,
+      "vortices": 16,
+      "ripple": 0.21288225054740906,
+      "efficiency": 0.977078914642334
+    },
+    {
+      "coarse": 16,
+      "iters": 100,
+      "seed_s": 0.31,
+      "vortices": 14,
+      "ripple": 0.2121177762746811,
+      "efficiency": 0.9772928357124329
+    },
+    {
+      "coarse": 16,
+      "iters": 40,
+      "seed_s": 0.13,
+      "vortices": 14,
+      "ripple": 0.21164581179618835,
+      "efficiency": 0.9770134091377258
+    }
+  ],
+  "threshold_sensitivity": [
+    {
+      "threshold": 0.05,
+      "random": {
+        "vortices": 397,
+        "ripple": 0.5730299949645996,
+        "efficiency": 0.9503055214881897
+      },
+      "quadratic": {
+        "vortices": 74,
+        "ripple": 0.5721635818481445,
+        "efficiency": 0.9803364872932434
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.4831385910511017,
+        "efficiency": 0.999877393245697
+      }
+    },
+    {
+      "threshold": 0.1,
+      "random": {
+        "vortices": 371,
+        "ripple": 0.5222477912902832,
+        "efficiency": 0.9488814473152161
+      },
+      "quadratic": {
+        "vortices": 62,
+        "ripple": 0.5203321576118469,
+        "efficiency": 0.9792845249176025
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.42318975925445557,
+        "efficiency": 0.9995435476303101
+      }
+    },
+    {
+      "threshold": 0.25,
+      "random": {
+        "vortices": 334,
+        "ripple": 0.44329357147216797,
+        "efficiency": 0.9445430636405945
+      },
+      "quadratic": {
+        "vortices": 44,
+        "ripple": 0.43838611245155334,
+        "efficiency": 0.9758790135383606
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.32216668128967285,
+        "efficiency": 0.9972042441368103
+      }
+    },
+    {
+      "threshold": 0.5,
+      "random": {
+        "vortices": 299,
+        "ripple": 0.3500893712043762,
+        "efficiency": 0.9264684915542603
+      },
+      "quadratic": {
+        "vortices": 32,
+        "ripple": 0.3399064242839813,
+        "efficiency": 0.9588661789894104
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.17764611542224884,
+        "efficiency": 0.9805320501327515
+      }
+    },
+    {
+      "threshold": 0.75,
+      "random": {
+        "vortices": 269,
+        "ripple": 0.30914267897605896,
+        "efficiency": 0.8952928185462952
+      },
+      "quadratic": {
+        "vortices": 20,
+        "ripple": 0.2906012237071991,
+        "efficiency": 0.930188000202179
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.09121694415807724,
+        "efficiency": 0.9465688467025757
+      }
+    },
+    {
+      "threshold": 0.9,
+      "random": {
+        "vortices": 244,
+        "ripple": 0.29297304153442383,
+        "efficiency": 0.8483926057815552
+      },
+      "quadratic": {
+        "vortices": 16,
+        "ripple": 0.2678489685058594,
+        "efficiency": 0.885469913482666
+      },
+      "transport": {
+        "vortices": 0,
+        "ripple": 0.03909662365913391,
+        "efficiency": 0.8941666483879089
+      }
+    }
+  ]
+}

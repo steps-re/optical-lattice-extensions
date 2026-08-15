@@ -1,0 +1,1 @@
+{"minimal_3laser": {"rank_real": 2, "rank_module": 2, "periodic": true}, "pentagonal_5laser": {"rank_real": 2, "rank_module": 4, "periodic": false}, "redundant_4laser": {"rank_real": 2, "rank_module": 2, "periodic": true}, "icosahedral_3d": {"rank_real": 3, "rank_module": 6, "periodic": false}}

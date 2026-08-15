@@ -1,0 +1,1088 @@
+{
+  "config": {
+    "slm": 256,
+    "pad": 512,
+    "waist": 60.0,
+    "maxiter": 50,
+    "coarse": 8,
+    "random_draws": 5
+  },
+  "results": {
+    "flattop/plain": {
+      "GS": {
+        "random": {
+          "vortices": {
+            "mean": 300.0,
+            "min": 280.0,
+            "max": 313.0
+          },
+          "ripple": {
+            "mean": 0.346807461977005,
+            "min": 0.3450949192047119,
+            "max": 0.3500893712043762
+          },
+          "efficiency": {
+            "mean": 0.9271207571029663,
+            "min": 0.9264684915542603,
+            "max": 0.9277114868164062
+          }
+        },
+        "quadratic": {
+          "vortices": 32,
+          "ripple": 0.3399064242839813,
+          "efficiency": 0.9588661789894104
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.17764613032341003,
+          "efficiency": 0.9805320501327515
+        },
+        "t_seed_s": 24.24,
+        "t_opt_s": 0.696,
+        "equal_time_iters": 2072,
+        "random_equal_time": {
+          "vortices": 250,
+          "ripple": 0.3154776394367218,
+          "efficiency": 0.9357689619064331
+        },
+        "quadratic_equal_time": {
+          "vortices": 4,
+          "ripple": 0.20677198469638824,
+          "efficiency": 0.9791864156723022
+        }
+      },
+      "WGS-Leonardo": {
+        "random": {
+          "vortices": {
+            "mean": 110.0,
+            "min": 102.0,
+            "max": 117.0
+          },
+          "ripple": {
+            "mean": 0.5228195726871491,
+            "min": 0.46799156069755554,
+            "max": 0.5553809404373169
+          },
+          "efficiency": {
+            "mean": 0.8743797063827514,
+            "min": 0.8720881938934326,
+            "max": 0.8767735958099365
+          }
+        },
+        "quadratic": {
+          "vortices": 72,
+          "ripple": 0.47990715503692627,
+          "efficiency": 0.8876810073852539
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.1737871915102005,
+          "efficiency": 0.9802098274230957
+        },
+        "t_seed_s": 24.24,
+        "t_opt_s": 0.812,
+        "equal_time_iters": 1665,
+        "random_equal_time": {
+          "vortices": 21,
+          "ripple": 0.30473756790161133,
+          "efficiency": 0.8988699913024902
+        },
+        "quadratic_equal_time": {
+          "vortices": 24,
+          "ripple": 0.2706356942653656,
+          "efficiency": 0.9087070822715759
+        }
+      },
+      "WGS-Nogrette": {
+        "random": {
+          "vortices": {
+            "mean": 222.0,
+            "min": 204.0,
+            "max": 234.0
+          },
+          "ripple": {
+            "mean": 0.3618309199810028,
+            "min": 0.3514566719532013,
+            "max": 0.37052252888679504
+          },
+          "efficiency": {
+            "mean": 0.9133962631225586,
+            "min": 0.9121761322021484,
+            "max": 0.9158380627632141
+          }
+        },
+        "quadratic": {
+          "vortices": 33,
+          "ripple": 0.24870896339416504,
+          "efficiency": 0.9423462748527527
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.1742948740720749,
+          "efficiency": 0.9805476069450378
+        },
+        "t_seed_s": 24.24,
+        "t_opt_s": 0.836,
+        "equal_time_iters": 1612,
+        "random_equal_time": {
+          "vortices": 52,
+          "ripple": 0.26816242933273315,
+          "efficiency": 0.9267730116844177
+        },
+        "quadratic_equal_time": {
+          "vortices": 9,
+          "ripple": 0.22595827281475067,
+          "efficiency": 0.9552028775215149
+        }
+      },
+      "WGS-Wu": {
+        "random": {
+          "vortices": {
+            "mean": 300.0,
+            "min": 282.0,
+            "max": 315.0
+          },
+          "ripple": {
+            "mean": 0.3452336132526398,
+            "min": 0.34313005208969116,
+            "max": 0.34884798526763916
+          },
+          "efficiency": {
+            "mean": 0.928102719783783,
+            "min": 0.9277153015136719,
+            "max": 0.9284911155700684
+          }
+        },
+        "quadratic": {
+          "vortices": 28,
+          "ripple": 0.33282020688056946,
+          "efficiency": 0.9596357345581055
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.18214330077171326,
+          "efficiency": 0.9819196462631226
+        },
+        "t_seed_s": 24.24,
+        "t_opt_s": 0.779,
+        "equal_time_iters": 1839,
+        "random_equal_time": {
+          "vortices": 224,
+          "ripple": 0.3823210597038269,
+          "efficiency": 0.952228307723999
+        },
+        "quadratic_equal_time": {
+          "vortices": 3,
+          "ripple": 0.30913203954696655,
+          "efficiency": 0.9890064597129822
+        }
+      },
+      "WGS-tanh": {
+        "random": {
+          "vortices": {
+            "mean": 299.2,
+            "min": 280.0,
+            "max": 313.0
+          },
+          "ripple": {
+            "mean": 0.34639883041381836,
+            "min": 0.3447202146053314,
+            "max": 0.3498409390449524
+          },
+          "efficiency": {
+            "mean": 0.9273496031761169,
+            "min": 0.9267871975898743,
+            "max": 0.9278644919395447
+          }
+        },
+        "quadratic": {
+          "vortices": 32,
+          "ripple": 0.33774515986442566,
+          "efficiency": 0.9589471817016602
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.17855139076709747,
+          "efficiency": 0.980819582939148
+        },
+        "t_seed_s": 24.24,
+        "t_opt_s": 0.766,
+        "equal_time_iters": 1865,
+        "random_equal_time": {
+          "vortices": 230,
+          "ripple": 0.3423459529876709,
+          "efficiency": 0.9427772164344788
+        },
+        "quadratic_equal_time": {
+          "vortices": 2,
+          "ripple": 0.25047969818115234,
+          "efficiency": 0.9814865589141846
+        }
+      },
+      "WGS-Kim": {
+        "random": {
+          "vortices": {
+            "mean": 203.0,
+            "min": 185.0,
+            "max": 219.0
+          },
+          "ripple": {
+            "mean": 5.012342500686645,
+            "min": 2.0567660331726074,
+            "max": 8.811582565307617
+          },
+          "efficiency": {
+            "mean": 0.8418904781341553,
+            "min": 0.7886673212051392,
+            "max": 0.8613355159759521
+          }
+        },
+        "quadratic": {
+          "vortices": 125,
+          "ripple": 7.229848861694336,
+          "efficiency": 0.8586288690567017
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.17637841403484344,
+          "efficiency": 0.9800767302513123
+        },
+        "t_seed_s": 24.24,
+        "t_opt_s": 0.752,
+        "equal_time_iters": 1727,
+        "random_equal_time": {
+          "vortices": 216,
+          "ripple": 2.3742456436157227,
+          "efficiency": 0.8586091995239258
+        },
+        "quadratic_equal_time": {
+          "vortices": 122,
+          "ripple": 2.721247673034668,
+          "efficiency": 0.866418719291687
+        },
+        "random_nofixphase": {
+          "vortices": 108,
+          "ripple": 0.5080559849739075,
+          "efficiency": 0.8741322755813599
+        },
+        "quadratic_nofixphase": {
+          "vortices": 72,
+          "ripple": 0.47990715503692627,
+          "efficiency": 0.8876810073852539
+        },
+        "transport_nofixphase": {
+          "vortices": 0,
+          "ripple": 0.1737871915102005,
+          "efficiency": 0.9802098274230957
+        }
+      }
+    },
+    "flattop/MRAF": {
+      "GS": {
+        "random": {
+          "vortices": {
+            "mean": 343.8,
+            "min": 332.0,
+            "max": 355.0
+          },
+          "ripple": {
+            "mean": 0.2876786768436432,
+            "min": 0.2839546501636505,
+            "max": 0.2915325164794922
+          },
+          "efficiency": {
+            "mean": 0.7874789237976074,
+            "min": 0.782913088798523,
+            "max": 0.7920676469802856
+          }
+        },
+        "quadratic": {
+          "vortices": 24,
+          "ripple": 0.25296899676322937,
+          "efficiency": 0.8152387142181396
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.17766202986240387,
+          "efficiency": 0.9797382354736328
+        },
+        "t_seed_s": 24.21,
+        "t_opt_s": 0.47,
+        "equal_time_iters": 2908,
+        "random_equal_time": {
+          "vortices": 320,
+          "ripple": 0.26816800236701965,
+          "efficiency": 0.8588664531707764
+        },
+        "quadratic_equal_time": {
+          "vortices": 6,
+          "ripple": 0.1813431680202484,
+          "efficiency": 0.9237967133522034
+        }
+      },
+      "WGS-Leonardo": {
+        "random": {
+          "vortices": {
+            "mean": 138.6,
+            "min": 131.0,
+            "max": 145.0
+          },
+          "ripple": {
+            "mean": 0.5775741457939148,
+            "min": 0.4923180341720581,
+            "max": 0.826027512550354
+          },
+          "efficiency": {
+            "mean": 0.38694398999214175,
+            "min": 0.37704694271087646,
+            "max": 0.3955809473991394
+          }
+        },
+        "quadratic": {
+          "vortices": 42,
+          "ripple": 0.2858850359916687,
+          "efficiency": 0.5717983245849609
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.17406480014324188,
+          "efficiency": 0.9792780876159668
+        },
+        "t_seed_s": 24.21,
+        "t_opt_s": 0.597,
+        "equal_time_iters": 2242,
+        "random_equal_time": {
+          "vortices": 13,
+          "ripple": 0.2087063193321228,
+          "efficiency": 0.6826210021972656
+        },
+        "quadratic_equal_time": {
+          "vortices": 6,
+          "ripple": 0.2023128718137741,
+          "efficiency": 0.8008062839508057
+        }
+      },
+      "WGS-Nogrette": {
+        "random": {
+          "vortices": {
+            "mean": 266.4,
+            "min": 259.0,
+            "max": 279.0
+          },
+          "ripple": {
+            "mean": 0.340428900718689,
+            "min": 0.3382834792137146,
+            "max": 0.3455629050731659
+          },
+          "efficiency": {
+            "mean": 0.7185326218605042,
+            "min": 0.7149154543876648,
+            "max": 0.7212889194488525
+          }
+        },
+        "quadratic": {
+          "vortices": 38,
+          "ripple": 0.20789910852909088,
+          "efficiency": 0.771337628364563
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.17473788559436798,
+          "efficiency": 0.979742169380188
+        },
+        "t_seed_s": 24.21,
+        "t_opt_s": 0.572,
+        "equal_time_iters": 2205,
+        "random_equal_time": {
+          "vortices": 30,
+          "ripple": 0.20493337512016296,
+          "efficiency": 0.7937690615653992
+        },
+        "quadratic_equal_time": {
+          "vortices": 3,
+          "ripple": 0.17754921317100525,
+          "efficiency": 0.8638349175453186
+        }
+      },
+      "WGS-Wu": {
+        "random": {
+          "vortices": {
+            "mean": 343.8,
+            "min": 332.0,
+            "max": 353.0
+          },
+          "ripple": {
+            "mean": 0.291489964723587,
+            "min": 0.2879678010940552,
+            "max": 0.2949742078781128
+          },
+          "efficiency": {
+            "mean": 0.7869823575019836,
+            "min": 0.7825957536697388,
+            "max": 0.7916361093521118
+          }
+        },
+        "quadratic": {
+          "vortices": 22,
+          "ripple": 0.2468785047531128,
+          "efficiency": 0.8099492192268372
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.1823234260082245,
+          "efficiency": 0.9810143709182739
+        },
+        "t_seed_s": 24.21,
+        "t_opt_s": 0.545,
+        "equal_time_iters": 2464,
+        "random_equal_time": {
+          "vortices": 253,
+          "ripple": 0.36240941286087036,
+          "efficiency": 0.8546868562698364
+        },
+        "quadratic_equal_time": {
+          "vortices": 7,
+          "ripple": 0.28953003883361816,
+          "efficiency": 0.9307235479354858
+        }
+      },
+      "WGS-tanh": {
+        "random": {
+          "vortices": {
+            "mean": 344.0,
+            "min": 332.0,
+            "max": 353.0
+          },
+          "ripple": {
+            "mean": 0.28838626146316526,
+            "min": 0.2846831679344177,
+            "max": 0.2921622097492218
+          },
+          "efficiency": {
+            "mean": 0.7868449091911316,
+            "min": 0.7823168039321899,
+            "max": 0.7914145588874817
+          }
+        },
+        "quadratic": {
+          "vortices": 22,
+          "ripple": 0.2513250410556793,
+          "efficiency": 0.8134304881095886
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.17860420048236847,
+          "efficiency": 0.9799960851669312
+        },
+        "t_seed_s": 24.21,
+        "t_opt_s": 0.551,
+        "equal_time_iters": 2447,
+        "random_equal_time": {
+          "vortices": 286,
+          "ripple": 0.31227561831474304,
+          "efficiency": 0.8661448955535889
+        },
+        "quadratic_equal_time": {
+          "vortices": 10,
+          "ripple": 0.23507030308246613,
+          "efficiency": 0.92717444896698
+        }
+      },
+      "WGS-Kim": {
+        "random": {
+          "vortices": {
+            "mean": 345.4,
+            "min": 337.0,
+            "max": 356.0
+          },
+          "ripple": {
+            "mean": 7.331388854980469,
+            "min": 3.015981912612915,
+            "max": 13.67275619506836
+          },
+          "efficiency": {
+            "mean": 0.06459073275327683,
+            "min": 0.06268236041069031,
+            "max": 0.06578823924064636
+          }
+        },
+        "quadratic": {
+          "vortices": 108,
+          "ripple": 1.12739896774292,
+          "efficiency": 0.12249408662319183
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.17304691672325134,
+          "efficiency": 0.965423583984375
+        },
+        "t_seed_s": 24.21,
+        "t_opt_s": 0.511,
+        "equal_time_iters": 2386,
+        "random_equal_time": {
+          "vortices": 366,
+          "ripple": 4.382490158081055,
+          "efficiency": 0.059246309101581573
+        },
+        "quadratic_equal_time": {
+          "vortices": 109,
+          "ripple": 3.277139663696289,
+          "efficiency": 0.11145578324794769
+        },
+        "random_nofixphase": {
+          "vortices": 131,
+          "ripple": 0.4965938925743103,
+          "efficiency": 0.3955809473991394
+        },
+        "quadratic_nofixphase": {
+          "vortices": 42,
+          "ripple": 0.2858850359916687,
+          "efficiency": 0.5717983245849609
+        },
+        "transport_nofixphase": {
+          "vortices": 0,
+          "ripple": 0.17406480014324188,
+          "efficiency": 0.9792780876159668
+        }
+      }
+    },
+    "ring/plain": {
+      "GS": {
+        "random": {
+          "vortices": {
+            "mean": 102.0,
+            "min": 97.0,
+            "max": 106.0
+          },
+          "ripple": {
+            "mean": 0.42935378551483155,
+            "min": 0.42659851908683777,
+            "max": 0.4342252314090729
+          },
+          "efficiency": {
+            "mean": 0.7870455741882324,
+            "min": 0.7795577049255371,
+            "max": 0.7926056385040283
+          }
+        },
+        "quadratic": {
+          "vortices": 0,
+          "ripple": 0.3760972023010254,
+          "efficiency": 0.8945516347885132
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.37284353375434875,
+          "efficiency": 0.8941704034805298
+        },
+        "t_seed_s": 16.82,
+        "t_opt_s": 0.894,
+        "equal_time_iters": 1450,
+        "random_equal_time": {
+          "vortices": 53,
+          "ripple": 0.416615754365921,
+          "efficiency": 0.8385300636291504
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.3734792172908783,
+          "efficiency": 0.8942734003067017
+        }
+      },
+      "WGS-Leonardo": {
+        "random": {
+          "vortices": {
+            "mean": 21.2,
+            "min": 17.0,
+            "max": 25.0
+          },
+          "ripple": {
+            "mean": 0.46348350644111636,
+            "min": 0.43322494626045227,
+            "max": 0.5173054933547974
+          },
+          "efficiency": {
+            "mean": 0.7639765620231629,
+            "min": 0.7615967988967896,
+            "max": 0.7672704458236694
+          }
+        },
+        "quadratic": {
+          "vortices": 2,
+          "ripple": 0.36105188727378845,
+          "efficiency": 0.8672876358032227
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.35724571347236633,
+          "efficiency": 0.8969264626502991
+        },
+        "t_seed_s": 16.82,
+        "t_opt_s": 0.675,
+        "equal_time_iters": 1168,
+        "random_equal_time": {
+          "vortices": 2,
+          "ripple": 0.3663451671600342,
+          "efficiency": 0.8082278966903687
+        },
+        "quadratic_equal_time": {
+          "vortices": 2,
+          "ripple": 0.35814058780670166,
+          "efficiency": 0.8872040510177612
+        }
+      },
+      "WGS-Nogrette": {
+        "random": {
+          "vortices": {
+            "mean": 68.2,
+            "min": 62.0,
+            "max": 77.0
+          },
+          "ripple": {
+            "mean": 0.44127017855644224,
+            "min": 0.4324110150337219,
+            "max": 0.4559883773326874
+          },
+          "efficiency": {
+            "mean": 0.7935407280921936,
+            "min": 0.7837088704109192,
+            "max": 0.8010937571525574
+          }
+        },
+        "quadratic": {
+          "vortices": 0,
+          "ripple": 0.3647700846195221,
+          "efficiency": 0.8980745077133179
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.36215072870254517,
+          "efficiency": 0.8960766792297363
+        },
+        "t_seed_s": 16.82,
+        "t_opt_s": 0.674,
+        "equal_time_iters": 1328,
+        "random_equal_time": {
+          "vortices": 5,
+          "ripple": 0.36743226647377014,
+          "efficiency": 0.8495286703109741
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.35898178815841675,
+          "efficiency": 0.8973026275634766
+        }
+      },
+      "WGS-Wu": {
+        "random": {
+          "vortices": {
+            "mean": 102.2,
+            "min": 95.0,
+            "max": 107.0
+          },
+          "ripple": {
+            "mean": 0.45143834352493284,
+            "min": 0.4479304850101471,
+            "max": 0.45531582832336426
+          },
+          "efficiency": {
+            "mean": 0.7970019221305847,
+            "min": 0.789151668548584,
+            "max": 0.803183913230896
+          }
+        },
+        "quadratic": {
+          "vortices": 0,
+          "ripple": 0.40643948316574097,
+          "efficiency": 0.905363917350769
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.40499600768089294,
+          "efficiency": 0.904921293258667
+        },
+        "t_seed_s": 16.82,
+        "t_opt_s": 0.607,
+        "equal_time_iters": 1438,
+        "random_equal_time": {
+          "vortices": 16,
+          "ripple": 0.6589838862419128,
+          "efficiency": 0.9478440880775452
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.6253295540809631,
+          "efficiency": 0.9624603986740112
+        }
+      },
+      "WGS-tanh": {
+        "random": {
+          "vortices": {
+            "mean": 103.0,
+            "min": 98.0,
+            "max": 110.0
+          },
+          "ripple": {
+            "mean": 0.43433149456977843,
+            "min": 0.43039512634277344,
+            "max": 0.4386627674102783
+          },
+          "efficiency": {
+            "mean": 0.7890856385231018,
+            "min": 0.7814947366714478,
+            "max": 0.7948942184448242
+          }
+        },
+        "quadratic": {
+          "vortices": 0,
+          "ripple": 0.3824130892753601,
+          "efficiency": 0.8968786001205444
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.3795555531978607,
+          "efficiency": 0.8964889645576477
+        },
+        "t_seed_s": 16.82,
+        "t_opt_s": 0.599,
+        "equal_time_iters": 1446,
+        "random_equal_time": {
+          "vortices": 34,
+          "ripple": 0.5310880541801453,
+          "efficiency": 0.8884032964706421
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.5168041586875916,
+          "efficiency": 0.9366980195045471
+        }
+      },
+      "WGS-Kim": {
+        "random": {
+          "vortices": {
+            "mean": 63.4,
+            "min": 57.0,
+            "max": 68.0
+          },
+          "ripple": {
+            "mean": 4.012135672569275,
+            "min": 1.7940725088119507,
+            "max": 8.055709838867188
+          },
+          "efficiency": {
+            "mean": 0.7375167846679688,
+            "min": 0.7152572870254517,
+            "max": 0.7841876745223999
+          }
+        },
+        "quadratic": {
+          "vortices": 2,
+          "ripple": 0.41464316844940186,
+          "efficiency": 0.8091151714324951
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.3558129072189331,
+          "efficiency": 0.8942159414291382
+        },
+        "t_seed_s": 16.82,
+        "t_opt_s": 0.671,
+        "equal_time_iters": 1263,
+        "random_equal_time": {
+          "vortices": 60,
+          "ripple": 1.5921804904937744,
+          "efficiency": 0.6894784569740295
+        },
+        "quadratic_equal_time": {
+          "vortices": 3,
+          "ripple": 0.7220438718795776,
+          "efficiency": 0.7996140718460083
+        },
+        "random_nofixphase": {
+          "vortices": 20,
+          "ripple": 0.4423096776008606,
+          "efficiency": 0.7643024325370789
+        },
+        "quadratic_nofixphase": {
+          "vortices": 2,
+          "ripple": 0.36105188727378845,
+          "efficiency": 0.8672876358032227
+        },
+        "transport_nofixphase": {
+          "vortices": 0,
+          "ripple": 0.35724571347236633,
+          "efficiency": 0.8969264626502991
+        }
+      }
+    },
+    "ring/MRAF": {
+      "GS": {
+        "random": {
+          "vortices": {
+            "mean": 120.6,
+            "min": 115.0,
+            "max": 124.0
+          },
+          "ripple": {
+            "mean": 0.4159092307090759,
+            "min": 0.4135211110115051,
+            "max": 0.4206959903240204
+          },
+          "efficiency": {
+            "mean": 0.6785816192626953,
+            "min": 0.6758432388305664,
+            "max": 0.6809569597244263
+          }
+        },
+        "quadratic": {
+          "vortices": 8,
+          "ripple": 0.36749571561813354,
+          "efficiency": 0.8229190111160278
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.36474427580833435,
+          "efficiency": 0.8861912488937378
+        },
+        "t_seed_s": 16.67,
+        "t_opt_s": 0.407,
+        "equal_time_iters": 2124,
+        "random_equal_time": {
+          "vortices": 72,
+          "ripple": 0.3885258138179779,
+          "efficiency": 0.7419041395187378
+        },
+        "quadratic_equal_time": {
+          "vortices": 6,
+          "ripple": 0.36356332898139954,
+          "efficiency": 0.8696523904800415
+        }
+      },
+      "WGS-Leonardo": {
+        "random": {
+          "vortices": {
+            "mean": 30.0,
+            "min": 28.0,
+            "max": 34.0
+          },
+          "ripple": {
+            "mean": 0.48760815858840945,
+            "min": 0.4426113963127136,
+            "max": 0.5445217490196228
+          },
+          "efficiency": {
+            "mean": 0.4358889877796173,
+            "min": 0.4112832546234131,
+            "max": 0.4621882140636444
+          }
+        },
+        "quadratic": {
+          "vortices": 0,
+          "ripple": 0.3574218451976776,
+          "efficiency": 0.8243616223335266
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.3570985198020935,
+          "efficiency": 0.8751260638237
+        },
+        "t_seed_s": 16.67,
+        "t_opt_s": 0.515,
+        "equal_time_iters": 1660,
+        "random_equal_time": {
+          "vortices": 0,
+          "ripple": 0.3574160933494568,
+          "efficiency": 0.686333417892456
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.35744524002075195,
+          "efficiency": 0.8678793907165527
+        }
+      },
+      "WGS-Nogrette": {
+        "random": {
+          "vortices": {
+            "mean": 73.2,
+            "min": 67.0,
+            "max": 77.0
+          },
+          "ripple": {
+            "mean": 0.4347362041473389,
+            "min": 0.42709407210350037,
+            "max": 0.4427413046360016
+          },
+          "efficiency": {
+            "mean": 0.6382696628570557,
+            "min": 0.633385956287384,
+            "max": 0.6419467926025391
+          }
+        },
+        "quadratic": {
+          "vortices": 0,
+          "ripple": 0.3575827181339264,
+          "efficiency": 0.8199009895324707
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.35788390040397644,
+          "efficiency": 0.8795599341392517
+        },
+        "t_seed_s": 16.67,
+        "t_opt_s": 0.496,
+        "equal_time_iters": 1564,
+        "random_equal_time": {
+          "vortices": 0,
+          "ripple": 0.3575356602668762,
+          "efficiency": 0.723786473274231
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.35740092396736145,
+          "efficiency": 0.8561400175094604
+        }
+      },
+      "WGS-Wu": {
+        "random": {
+          "vortices": {
+            "mean": 119.4,
+            "min": 112.0,
+            "max": 123.0
+          },
+          "ripple": {
+            "mean": 0.44621102809906005,
+            "min": 0.4432881772518158,
+            "max": 0.4507029950618744
+          },
+          "efficiency": {
+            "mean": 0.6852917671203613,
+            "min": 0.6823978424072266,
+            "max": 0.6881502866744995
+          }
+        },
+        "quadratic": {
+          "vortices": 8,
+          "ripple": 0.39916712045669556,
+          "efficiency": 0.8338539004325867
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.3970964550971985,
+          "efficiency": 0.8964939713478088
+        },
+        "t_seed_s": 16.67,
+        "t_opt_s": 0.488,
+        "equal_time_iters": 1774,
+        "random_equal_time": {
+          "vortices": 4,
+          "ripple": 0.6671780943870544,
+          "efficiency": 0.8018081188201904
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.6318958401679993,
+          "efficiency": 0.9303878545761108
+        }
+      },
+      "WGS-tanh": {
+        "random": {
+          "vortices": {
+            "mean": 120.6,
+            "min": 115.0,
+            "max": 124.0
+          },
+          "ripple": {
+            "mean": 0.422145277261734,
+            "min": 0.41959401965141296,
+            "max": 0.42686009407043457
+          },
+          "efficiency": {
+            "mean": 0.6797584295272827,
+            "min": 0.6770559549331665,
+            "max": 0.6822534203529358
+          }
+        },
+        "quadratic": {
+          "vortices": 8,
+          "ripple": 0.3740512728691101,
+          "efficiency": 0.8245811462402344
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.37151598930358887,
+          "efficiency": 0.8882479667663574
+        },
+        "t_seed_s": 16.67,
+        "t_opt_s": 0.481,
+        "equal_time_iters": 1824,
+        "random_equal_time": {
+          "vortices": 37,
+          "ripple": 0.5471324324607849,
+          "efficiency": 0.7820912599563599
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.5247271060943604,
+          "efficiency": 0.9127068519592285
+        }
+      },
+      "WGS-Kim": {
+        "random": {
+          "vortices": {
+            "mean": 101.8,
+            "min": 87.0,
+            "max": 108.0
+          },
+          "ripple": {
+            "mean": 3.720350646972656,
+            "min": 2.8384931087493896,
+            "max": 5.863614559173584
+          },
+          "efficiency": {
+            "mean": 0.05986892133951187,
+            "min": 0.04164917767047882,
+            "max": 0.07416271418333054
+          }
+        },
+        "quadratic": {
+          "vortices": 0,
+          "ripple": 0.3591172993183136,
+          "efficiency": 0.6472939252853394
+        },
+        "transport": {
+          "vortices": 0,
+          "ripple": 0.36337512731552124,
+          "efficiency": 0.8548511266708374
+        },
+        "t_seed_s": 16.67,
+        "t_opt_s": 0.5,
+        "equal_time_iters": 1724,
+        "random_equal_time": {
+          "vortices": 83,
+          "ripple": 2.9596691131591797,
+          "efficiency": 0.06012418121099472
+        },
+        "quadratic_equal_time": {
+          "vortices": 0,
+          "ripple": 0.3486000895500183,
+          "efficiency": 0.6212468147277832
+        },
+        "random_nofixphase": {
+          "vortices": 29,
+          "ripple": 0.44282564520835876,
+          "efficiency": 0.4523165822029114
+        },
+        "quadratic_nofixphase": {
+          "vortices": 0,
+          "ripple": 0.3574218451976776,
+          "efficiency": 0.8243616223335266
+        },
+        "transport_nofixphase": {
+          "vortices": 0,
+          "ripple": 0.3570985198020935,
+          "efficiency": 0.8751260638237
+        }
+      }
+    }
+  }
+}

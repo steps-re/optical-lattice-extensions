@@ -1,0 +1,214 @@
+\documentclass[aps,prb,floatfix,amsmath,amssymb,groupedaddress]{revtex4}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{prop}{Proposition}
+
+\begin{document}
+\providecommand{\half}{{\frac{1}{2}}}
+
+\title{Extensions to ``Intro to Optical Lattices'': higher dimensions, optimal shuttles,\\
+shaped illumination, and quasicrystals}
+\author{M.~German (with AI assistance) --- a companion note to the public
+manuscript and code of H.~Swan (github.com/orswan); independent work, not
+endorsed by the original author}
+\maketitle
+
+This note extends the shuttling/Landau-Zener analysis of Swan's manuscript in
+four directions. The dynamical claims (Secs.~I--III) were checked against
+momentum-space Schr\"odinger integration at finite cutoff
+(\texttt{lattice3D.py}, a $d$-dimensional generalization of his
+\texttt{lattice1D.py}; natural units $\hbar = 1$, $2m = 1$ throughout), with
+endpoint- and resolution-convergence spot checks; Secs.~IV--V rest on the
+separate numerical models described there.
+
+\section{The projection law in $d$ dimensions}
+
+Consider a $d$-dimensional lattice $V(x) = \sum_c A_c \cos(b_c \cdot x)$ swept
+by a frame trajectory $Q(t)$ with velocity $\dot Q$. Zone-edge degeneracies of
+the 1D problem become \emph{Bragg planes}: the state $|q\rangle$ crosses
+$|q + b\rangle$ where $|q - Q|^2 = |q + b - Q|^2$. Near a crossing of the
+plane of a single reciprocal vector $b$, projecting onto the two crossing
+momentum states gives diabatic splitting $\Delta E = |q+b-Q|^2 - |q-Q|^2$ with
+slew rate $|d\,\Delta E/dt| = 2\, |b \cdot \dot Q|$ and gap $A_b$ (the
+plane's own cosine amplitude, i.e.\ twice its complex Fourier coefficient
+--- no other cosine contributes at first order). The
+Landau-Zener loss per crossing is therefore
+\begin{equation}
+P_{\text{tunnel}} = \exp\!\left(-\frac{\pi A_b^2}{4\, |b\cdot \dot Q|}\right),
+\qquad b\cdot\dot Q \neq 0,
+\label{projlaw}
+\end{equation}
+which depends only on the component of the sweep \emph{normal to the plane}:
+an oblique shuttle pays only for the normal velocity. For $d{=}1$,
+$b = k$, $\dot Q = g/2$ recovers the manuscript's
+$\exp(-\pi A^2/2kg)$.
+
+\emph{Verification, separable case.} Cubic lattices in $d = 2, 3$
+($b_i = 2\hat e_i$, amplitudes $A \in [0.2, 0.45]$, drives
+$g \in [0.12, 0.24]$), sweep tilted by $\theta \in [0^\circ, 30^\circ]$ from
+a plane normal, integration on $(2n{+}1)^d$ momentum grids: all 30 points
+match eq.~(\ref{projlaw}) to $3\times10^{-2}$ relative or better, confirming
+the $\cos\theta$ collapse. These lattices are separable ($H = \sum_i H_i$), so
+this is a consistency check of the framework, not a test of the law beyond
+1D physics (endpoint effects contribute at the $10^{-2}$ level, measured by
+margin extrapolation).
+
+\emph{Verification, nonseparable case.} A sharper test is a minimal
+2D lattice --- three lasers, cosines on $b_1$, $b_2$ \emph{and} the cross
+vector $b_1 - b_2$ --- which is not a Kronecker sum. There
+eq.~(\ref{projlaw}) survives only as the leading-order description: measured
+single-plane losses exceed the bare-$A$ prediction systematically, by
+$+2$--$8\%$ relative at $A = 0.25$ and $+8$--$32\%$ at $A = 0.4$ (worst at
+large tilt). The cross term dresses the crossing --- indirect paths through
+the neighboring momentum state modify the effective gap --- so in real
+minimal-laser lattices the projection law is a design estimate good to tens
+of percent at moderate depth, not an exact statement.
+
+\section{Simultaneous crossings at the zone corner}
+
+Sweeping along the diagonal $\theta = 45^\circ$ crosses two Bragg planes at
+the same instant. This is a \emph{four}-state event, not three: at the zone
+corner $|q\rangle$, $|q{+}b_1\rangle$, $|q{+}b_2\rangle$ \emph{and}
+$|q{+}b_1{+}b_2\rangle$ are simultaneously degenerate, and the fourth state
+cannot be dropped --- it is what the ground band becomes past the corner. A
+three-state truncation predicts a collective $\sqrt2$-enhanced coupling and
+hence probability $P_1^2$ of remaining in the initial diabatic momentum
+state (that model has no post-corner ground-band channel at all, which is
+precisely its defect); integrating the reduced four-state model instead
+gives carried population $\approx (1-P_1)^2$, and the full lattice
+simulation agrees:
+across 6 depth/drive combinations (losses $0.29$--$0.97$) the measured loss
+matches the factorized prediction $1-(1-P_1)^2$ to $\lesssim 10^{-2}$
+(median $\sim 1\times10^{-3}$, down to $\sim 10^{-4}$ at the highest
+losses). The mechanism is separability, not a generic
+multilevel theorem: the cubic potential splits as $H = H_x + H_y + H_z$, so
+the diagonal sweep is exactly two independent 1D Landau-Zener events. For
+\emph{nonseparable} lattices the factorization breaks, and we measured the
+breakdown: in the minimal 3-laser 2D lattice (cross term
+$\cos((b_1{-}b_2)\cdot x)$ coupling the degenerate intermediate states), the
+diagonal-corner loss exceeds the factorized prediction by $+0.01$ to $+0.18$
+absolute (largest at $A = 0.4$, $g = 0.15$), while the separable reference
+at identical parameters agrees within $0.004$. Corners of real
+minimal-laser lattices are anomalously lossy and deserve their own
+treatment.
+
+\section{Loss-reducing shuttle ramps}
+
+Fix total transported momentum $Nk$ and total time $T$. Equation
+(\ref{projlaw}) says loss is paid only inside windows of width
+$w \sim \mathcal{O}(A/k)$ around the $N$ crossings, which suggests a bang-bang-like profile: sweep slowly
+($\dot Q = v_s$) through each window, sprint ($\dot Q = v_f$) between them.
+As $v_f/v_s \to \infty$ the budget concentrates in the windows,
+$v_s \to N w / T$, and the per-crossing exponent improves over the linear
+ramp by the factor $k/w > 1$. The window cannot be taken arbitrarily narrow:
+the LZ transition region has its own sweep-rate-dependent width, and the
+formula requires the crossing to be traversed between asymptotic detunings,
+so the improvement cannot be unbounded; where the true optimum of the exact
+dynamics lies, and under what control constraints, is left open.
+
+\emph{Measurement} ($A = 0.35$, $k = 2$, $N = 3$, $T = 254$ chosen so the
+linear ramp loses 34.1\%; controls restricted to a two-parameter
+tanh-smoothed bang-bang family with bounded $v_f$): the best profile in a
+12-point scan ($v_s/v_f = 0.15$, $w = 0.5$) achieves $0.28\%$ measured loss,
+a reduction by a factor of 122 at equal total time, with the trend in
+$(v_s/v_f, w)$ as expected over the probed range. Two caveats. First, the
+independent-LZ estimate at the measured minimum crossing speed
+($v_s = 0.0072$) is $0.37\%$; the measured value sits slightly below it,
+within finite-window corrections, so the improvement is essentially
+incoherent physics (a factor of 90 is supported by the incoherent estimate
+alone). Second, this is the best of a small in-family scan, not a
+demonstrated global optimum: loss-reducing, not loss-optimal.
+The linear-ramp measurement itself validates the compounding law
+$1-(1-P)^N$ to three decimals, and the best-profile loss is stable under
+doubling the time resolution together with a $1.5\times$ increase of the
+momentum cutoff.
+
+\section{Uniform-depth lattices from shaped illumination}
+
+Lattice depth is proportional to local beam intensity, so a Gaussian-beam
+lattice is shallowest exactly where the cloud ends: LZ loss, exponential in
+$A^2$, then eats the cloud edge first. Shaping the lattice beams into a
+flat-top (via the optimal-transport method of Swan et al., Opt.\ Express 33,
+6290 (2025); reimplemented and cross-checked here) equalizes the depth. With
+equal power delivered into the cloud region, a simulated $\sigma = 18\,$px
+cloud in the reconstructed flat-top vs an equal-power Gaussian shows:
+cloud-averaged 3-crossing survival $0.863$ vs $0.846$ (comparable), depth
+coefficient of variation $5.7\%$ vs $25.4\%$, and 5th-percentile survival
+$0.882$ vs $0.564$. For the flat-top the mean sits \emph{below} the 5th
+percentile; this is not an error but the shape of the distribution --- the
+small fraction of the cloud beyond the plateau edge is lost almost entirely
+while everything inside survives alike, which is exactly the sense in which
+uniform illumination protects the bulk rather than raising the average. It
+should also reduce sensitivity to shot-to-shot cloud-position fluctuations,
+though we did not simulate a fluctuating ensemble.
+
+A remark on the shaper itself. The baseline worth measuring against is not a
+randomly initialized Gerchberg-Saxton loop but an analytically preconditioned
+one: the standard package (\texttt{slmsuite}) seeds from a lens-and-blaze fit
+to the target's first and second moments, which is much better than random.
+Against all three on a $256\,$px aperture padded to $512$, after $50$
+iterations, scored with that package's own winding-number measure (random
+initialization averaged over five seeded draws): residual vortices in the
+flat-top $300$ (random), $32$ (analytic), $0$ (OT-seeded); intensity ripple
+$0.347$, $0.340$, $0.178$; efficiency $0.927$, $0.959$, $0.981$. The ripple
+floor set by the target's own soft edges is $0.175$, so the OT seed lands
+essentially at the best the target admits. Brenier's theorem motivates the
+construction --- the exact transport map is the gradient of a convex potential
+--- but the zero winding numbers are measured rather than derived: the discrete
+solver only approximates that map, and a curl-free aperture phase does not by
+itself force a vortex-free far field. The advantage is insensitive to what runs
+afterwards. Across six Gerchberg--Saxton variants, two targets, and plain and
+noise-region variants of each, the OT seed gives zero vortices in all $24$
+configurations, while the analytic seed ranges from $0$ to $125$ depending on
+the variant. On a ring target the analytic seed already reaches zero vortices
+unaided and the two tie. At practical coarse-grid settings the Sinkhorn solve
+costs $0.3\,$s, comparable to the iterations it precedes.
+
+\section{The rank criterion for optical quasicrystals}
+
+Swan's manuscript observes that non-minimal laser configurations are
+``generically not a lattice'' and asks when they form quasicrystals. The
+sharp criterion: let $M \subset \mathbb{R}^d$ be the $\mathbb{Z}$-module
+generated by the potential's wavevectors,
+$r = \operatorname{rank}_{\mathbb Z} M$, and
+$e = \dim_{\mathbb R} \operatorname{span} M$. On its span, the potential is
+periodic iff $r = e$ (the module is then a true reciprocal lattice); $r > e$
+gives a \emph{quasiperiodic potential} with an $r$-dimensional superspace
+description (we use ``quasicrystal'' informally for the potential; properties
+of the resulting atomic phase --- long-range order, pure-point diffraction,
+stability --- are separate questions not addressed here).
+(Comparing $r$ to $d$ alone fails: $\cos x + \cos\sqrt2\,x$ in the plane has
+$r = 2 = d$ but $e = 1$ --- quasiperiodic along $x$, trivial in $y$.) The rank
+statements are algebraic; the four configurations below illustrate them
+numerically, using a bounded-denominator rational-dependence heuristic
+(floating-point rank alone cannot certify integer relations, and exact
+certification for general generator sets would need lattice-reduction
+methods; the four configurations here are standard ones whose module ranks
+are known analytically): a minimal
+3-laser 2D lattice (rank 2 = $d$:
+periodic), the pentagonal 5-laser configuration (rank 4 $> 2$: quasicrystal,
+tenfold diffraction), a 4-laser configuration with the redundant beam chosen
+on the integer lattice per Swan's countable-family construction (rank 2:
+periodic, as he predicted), and the icosahedral configuration in 3D, realized as six standing waves
+along the icosahedral axes ($r = 6 > e = 3$: the icosahedral quasicrystal;
+six independent standing waves require frequency offsets \emph{between
+different pairs} --- each pair internally monochromatic --- so that
+cross-pair interference terms time-average away, per the manuscript's
+multi-frequency remark). His open question --- which
+space groups are realizable --- remains open and is a natural next target;
+the Bravais-class half is settled by his own construction.
+
+\section*{Reproducibility}
+
+\texttt{lattice3D.py}, \texttt{run\_3d.py}, \texttt{ramp\_optimizer.py},
+\texttt{cloud\_survival.py}, \texttt{phase\_diversity.py},
+\texttt{quasicrystal.py}; results JSON alongside. The phase-diversity solver
+(cf.\ the empty \texttt{PhaseDiversity} repository) recovers a simulated
+aberrated input beam from 6 defocus probes with overlap
+$|\langle E_{\rm rec}|E_{\rm true}\rangle|^2 = 0.9997$ under Poisson shot
+noise at $10^4$ peak counts per pixel (0.8\% amplitude error;
+intensity-weighted residual phase RMS 12~mrad, or 28~mrad unweighted over
+the region with amplitude above 5\% of peak --- the dim edge dominates the
+unweighted figure).
+
+\end{document}
