@@ -25,7 +25,7 @@ The zero vortex counts are measured, not derived. Brenier's theorem makes the ex
 
 The seed costs 0.3 s at practical settings (`coarse=12`, 40 Sinkhorn iterations per stage), against 0.3 s for the 50 GS iterations themselves. The accuracy-tuned defaults cost 12 to 24 s and buy nothing a seed needs.
 
-Code, benchmarks and tests are in `contrib/slmsuite/`, with two issue drafts ready for upstream.
+Code, benchmarks and tests are in `contrib/slmsuite/`. Upstream: the bug report is [slmsuite#205](https://github.com/slmsuite/slmsuite/issues/205) and the feature proposal is [slmsuite#206](https://github.com/slmsuite/slmsuite/issues/206).
 
 ## How it is verified
 

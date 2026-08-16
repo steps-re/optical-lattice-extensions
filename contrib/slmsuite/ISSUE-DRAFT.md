@@ -1,4 +1,4 @@
-# DRAFT: slmsuite issue. NOT POSTED. Mike posts.
+# POSTED as [slmsuite#206](https://github.com/slmsuite/slmsuite/issues/206) on 2026-08-16.
 
 Title: Optimal-transport initial phase (Swan et al. 2025) as an alternative to `quadratic_phase`
 

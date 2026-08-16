@@ -1,4 +1,4 @@
-# DRAFT: slmsuite bug issue. NOT POSTED. Mike posts.
+# POSTED as [slmsuite#205](https://github.com/slmsuite/slmsuite/issues/205) on 2026-08-16.
 
 Title: `_remove_vortices` plots instead of removing, and its documented callback raises AttributeError
 
