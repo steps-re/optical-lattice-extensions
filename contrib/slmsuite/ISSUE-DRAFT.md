@@ -7,8 +7,11 @@ Title: Optimal-transport initial phase (Swan et al. 2025) as an alternative to `
 Swan, Torchylo, Van de Graaff, Rudolph and Hogan, "High-fidelity holographic beam shaping
 with optimal transport and phase diversity", Opt. Express 33, 6290 (2025),
 arXiv:2408.17025, show that optimal transport produces excellent initializations for
-iterative phase retrieval. The method is theirs. What follows is an implementation against
-your API, a benchmark, and the tests.
+iterative phase retrieval. The method is theirs, and their lab maintains a Julia reference
+implementation, `hoganphysics/SLMTools` (MIT, active), with `otPhase` and a faster
+`otQuickPhase`. Nothing equivalent exists in the Python SLM ecosystem. What follows is an
+independent Python implementation written from the paper, benchmarked inside your API,
+with tests.
 
 `reset_phase()` currently offers random phase, or a lens-and-blaze fit to the target's
 first and second moments. Your docstring is candid that the quadratic option exists
