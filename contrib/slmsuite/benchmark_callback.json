@@ -1,0 +1,195 @@
+{
+  "callback_effect": {
+    "flattop": {
+      "none": {
+        "vortices": 32,
+        "ripple": 0.3399064242839813,
+        "efficiency": 0.9588661789894104
+      },
+      "as shipped": {
+        "vortices": 32,
+        "ripple": 0.3399064242839813,
+        "efficiency": 0.9588661789894104
+      },
+      "+ farfield write-back": {
+        "vortices": 6,
+        "ripple": 0.5371657013893127,
+        "efficiency": 0.9036824107170105
+      }
+    },
+    "flattop/MRAF": {
+      "none": {
+        "vortices": 24,
+        "ripple": 0.25296899676322937,
+        "efficiency": 0.8152387142181396
+      },
+      "as shipped": {
+        "vortices": 24,
+        "ripple": 0.25296899676322937,
+        "efficiency": 0.8152387142181396
+      },
+      "+ farfield write-back": {
+        "vortices": 6,
+        "ripple": 0.4580656886100769,
+        "efficiency": 0.735805869102478
+      }
+    },
+    "ring/MRAF": {
+      "none": {
+        "vortices": 8,
+        "ripple": 0.36749571561813354,
+        "efficiency": 0.8229190111160278
+      },
+      "as shipped": {
+        "vortices": 8,
+        "ripple": 0.36749571561813354,
+        "efficiency": 0.8229190111160278
+      },
+      "+ farfield write-back": {
+        "vortices": 4,
+        "ripple": 0.6386321187019348,
+        "efficiency": 0.7522785663604736
+      }
+    }
+  },
+  "trace": [
+    {
+      "iter": 9,
+      "before": 102,
+      "after": 30
+    },
+    {
+      "iter": 19,
+      "before": 118,
+      "after": 26
+    },
+    {
+      "iter": 29,
+      "before": 122,
+      "after": 12
+    },
+    {
+      "iter": 39,
+      "before": 122,
+      "after": 14
+    },
+    {
+      "iter": 49,
+      "before": 128,
+      "after": 26
+    }
+  ],
+  "head_to_head": {
+    "flattop": {
+      "quadratic": {
+        "vortices": 32,
+        "ripple": 0.3399064242839813,
+        "efficiency": 0.9588661789894104,
+        "time_s": 0.31,
+        "iters": 50
+      },
+      "quadratic + remove_vortices": {
+        "vortices": 6,
+        "ripple": 0.5371657013893127,
+        "efficiency": 0.9036824107170105,
+        "time_s": 1.38,
+        "iters": 50
+      },
+      "transport seed": {
+        "vortices": 0,
+        "ripple": 0.16934816539287567,
+        "efficiency": 0.9806317090988159,
+        "time_s": 0.7,
+        "iters": 50
+      },
+      "transport + remove_vortices": {
+        "vortices": 0,
+        "ripple": 0.19446517527103424,
+        "efficiency": 0.9804415106773376,
+        "time_s": 0.78,
+        "iters": 50
+      },
+      "quadratic + rv, equal wall clock": {
+        "vortices": 32,
+        "ripple": 0.4751206040382385,
+        "efficiency": 0.9307467937469482,
+        "time_s": 1.77,
+        "iters": 61
+      }
+    },
+    "flattop/MRAF": {
+      "quadratic": {
+        "vortices": 24,
+        "ripple": 0.25296899676322937,
+        "efficiency": 0.8152387142181396,
+        "time_s": 0.22,
+        "iters": 50
+      },
+      "quadratic + remove_vortices": {
+        "vortices": 6,
+        "ripple": 0.4580656886100769,
+        "efficiency": 0.735805869102478,
+        "time_s": 1.3,
+        "iters": 50
+      },
+      "transport seed": {
+        "vortices": 0,
+        "ripple": 0.17188090085983276,
+        "efficiency": 0.9782838821411133,
+        "time_s": 0.57,
+        "iters": 50
+      },
+      "transport + remove_vortices": {
+        "vortices": 0,
+        "ripple": 0.2551725506782532,
+        "efficiency": 0.9732032418251038,
+        "time_s": 0.87,
+        "iters": 50
+      },
+      "quadratic + rv, equal wall clock": {
+        "vortices": 13,
+        "ripple": 0.3943720757961273,
+        "efficiency": 0.7295581698417664,
+        "time_s": 1.59,
+        "iters": 62
+      }
+    },
+    "ring/MRAF": {
+      "quadratic": {
+        "vortices": 8,
+        "ripple": 0.36749571561813354,
+        "efficiency": 0.8229190111160278,
+        "time_s": 0.21,
+        "iters": 50
+      },
+      "quadratic + remove_vortices": {
+        "vortices": 4,
+        "ripple": 0.6386321187019348,
+        "efficiency": 0.7522785663604736,
+        "time_s": 0.63,
+        "iters": 50
+      },
+      "transport seed": {
+        "vortices": 4,
+        "ripple": 0.368594229221344,
+        "efficiency": 0.8229570388793945,
+        "time_s": 0.49,
+        "iters": 50
+      },
+      "transport + remove_vortices": {
+        "vortices": 1,
+        "ripple": 0.5708081722259521,
+        "efficiency": 0.673150897026062,
+        "time_s": 1.02,
+        "iters": 50
+      },
+      "quadratic + rv, equal wall clock": {
+        "vortices": 4,
+        "ripple": 0.5057646036148071,
+        "efficiency": 0.6669659614562988,
+        "time_s": 1.0,
+        "iters": 71
+      }
+    }
+  }
+}

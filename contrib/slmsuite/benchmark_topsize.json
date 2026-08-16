@@ -1,0 +1,242 @@
+[
+  {
+    "half": 20,
+    "fraction": 0.006103515625,
+    "method": "GS",
+    "quadratic": {
+      "vortices": 0,
+      "ripple": 0.37057259678840637,
+      "efficiency": 0.9331587553024292
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.3775538206100464,
+      "efficiency": 0.9353904724121094
+    }
+  },
+  {
+    "half": 20,
+    "fraction": 0.006103515625,
+    "method": "WGS-Leonardo",
+    "quadratic": {
+      "vortices": 0,
+      "ripple": 0.36641165614128113,
+      "efficiency": 0.9273641705513
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.368529349565506,
+      "efficiency": 0.9166024923324585
+    }
+  },
+  {
+    "half": 20,
+    "fraction": 0.006103515625,
+    "method": "WGS-Kim",
+    "quadratic": {
+      "vortices": 0,
+      "ripple": 0.3215956687927246,
+      "efficiency": 0.9004287123680115
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.39007824659347534,
+      "efficiency": 0.8958739638328552
+    }
+  },
+  {
+    "half": 20,
+    "fraction": 0.006103515625,
+    "method": "WGS-Nogrette",
+    "quadratic": {
+      "vortices": 0,
+      "ripple": 0.36855778098106384,
+      "efficiency": 0.932755172252655
+    },
+    "transport": {
+      "vortices": 4,
+      "ripple": 0.3630777597427368,
+      "efficiency": 0.9223914742469788
+    }
+  },
+  {
+    "half": 40,
+    "fraction": 0.0244140625,
+    "method": "GS",
+    "quadratic": {
+      "vortices": 4,
+      "ripple": 0.4004151523113251,
+      "efficiency": 0.9716775417327881
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.28351855278015137,
+      "efficiency": 0.9725426435470581
+    }
+  },
+  {
+    "half": 40,
+    "fraction": 0.0244140625,
+    "method": "WGS-Leonardo",
+    "quadratic": {
+      "vortices": 0,
+      "ripple": 0.29013770818710327,
+      "efficiency": 0.9393882751464844
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.286992609500885,
+      "efficiency": 0.9695525765419006
+    }
+  },
+  {
+    "half": 40,
+    "fraction": 0.0244140625,
+    "method": "WGS-Kim",
+    "quadratic": {
+      "vortices": 21,
+      "ripple": 7.389878749847412,
+      "efficiency": 0.851151168346405
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.2874624729156494,
+      "efficiency": 0.961195707321167
+    }
+  },
+  {
+    "half": 40,
+    "fraction": 0.0244140625,
+    "method": "WGS-Nogrette",
+    "quadratic": {
+      "vortices": 0,
+      "ripple": 0.30064910650253296,
+      "efficiency": 0.9484751224517822
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.28925660252571106,
+      "efficiency": 0.9715012907981873
+    }
+  },
+  {
+    "half": 80,
+    "fraction": 0.09765625,
+    "method": "GS",
+    "quadratic": {
+      "vortices": 32,
+      "ripple": 0.3399064242839813,
+      "efficiency": 0.9588661789894104
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.16934818029403687,
+      "efficiency": 0.9806317090988159
+    }
+  },
+  {
+    "half": 80,
+    "fraction": 0.09765625,
+    "method": "WGS-Leonardo",
+    "quadratic": {
+      "vortices": 72,
+      "ripple": 0.47990715503692627,
+      "efficiency": 0.8876810073852539
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.1761941760778427,
+      "efficiency": 0.9795980453491211
+    }
+  },
+  {
+    "half": 80,
+    "fraction": 0.09765625,
+    "method": "WGS-Kim",
+    "quadratic": {
+      "vortices": 125,
+      "ripple": 7.229848861694336,
+      "efficiency": 0.8586288690567017
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.16893227398395538,
+      "efficiency": 0.9785150289535522
+    }
+  },
+  {
+    "half": 80,
+    "fraction": 0.09765625,
+    "method": "WGS-Nogrette",
+    "quadratic": {
+      "vortices": 33,
+      "ripple": 0.24870896339416504,
+      "efficiency": 0.9423462748527527
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.1759408861398697,
+      "efficiency": 0.9799976348876953
+    }
+  },
+  {
+    "half": 120,
+    "fraction": 0.2197265625,
+    "method": "GS",
+    "quadratic": {
+      "vortices": 182,
+      "ripple": 0.33073005080223083,
+      "efficiency": 0.9638715982437134
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.1427159458398819,
+      "efficiency": 0.9874322414398193
+    }
+  },
+  {
+    "half": 120,
+    "fraction": 0.2197265625,
+    "method": "WGS-Leonardo",
+    "quadratic": {
+      "vortices": 203,
+      "ripple": 0.7009589672088623,
+      "efficiency": 0.8846076726913452
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.14362643659114838,
+      "efficiency": 0.9868434071540833
+    }
+  },
+  {
+    "half": 120,
+    "fraction": 0.2197265625,
+    "method": "WGS-Kim",
+    "quadratic": {
+      "vortices": 399,
+      "ripple": 3.2887401580810547,
+      "efficiency": 0.8553988337516785
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.1460958570241928,
+      "efficiency": 0.9824182987213135
+    }
+  },
+  {
+    "half": 120,
+    "fraction": 0.2197265625,
+    "method": "WGS-Nogrette",
+    "quadratic": {
+      "vortices": 125,
+      "ripple": 0.2593879997730255,
+      "efficiency": 0.9423184394836426
+    },
+    "transport": {
+      "vortices": 0,
+      "ripple": 0.14249442517757416,
+      "efficiency": 0.9870018362998962
+    }
+  }
+]
