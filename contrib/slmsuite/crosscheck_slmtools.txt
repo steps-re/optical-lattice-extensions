@@ -1,0 +1,19 @@
+input replication: |dU|max=5.55e-17 |dV|max=5.55e-17
+
+seed-only (no iterations):
+  SLMTools otPhase       efficiency 0.961  ripple 0.223  vortices(in support) 0
+  ours transport_phase   efficiency 0.938  ripple 0.264  vortices(in support) 0
+
+agreement in the illuminated core:
+  gradient RMS diff / RMS magnitude: 0.1778 / 1.1691 = 15.2%
+  phase std after piston removal: 0.167 rad
+
+translation control (8 px shift), theirs:
+  measured blaze 0.7844 rad/px, expected 0.7854, ratio 0.999
+
+after 100 GS iterations (our loop, both seeds):
+  from SLMTools seed     efficiency 0.952  ripple 0.171  vortices 0
+  from our seed          efficiency 0.952  ripple 0.170  vortices 0
+
+their own gs(100) output, propagated by us:
+  efficiency 0.952  vortices 0

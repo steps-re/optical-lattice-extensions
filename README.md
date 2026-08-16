@@ -95,7 +95,7 @@ Treat everything here as a reproducible claim rather than an authority. The test
 
 The two Python 3 fixes to `lattice1D.py` went upstream as [orswan/lattice#1](https://github.com/orswan/lattice/pull/1), still open. None of his code, text or figures is redistributed here. His personal repositories carry no license, which is also why the compiled manuscript that exists locally stays local.
 
-His lab is another matter: [hoganphysics/SLMTools](https://github.com/hoganphysics/SLMTools) is an actively maintained, MIT-licensed Julia implementation of the paper's beam-shaping methods. `contrib/slmsuite/transport_seed.py` was written independently from the paper before I knew SLMTools existed, and has not been cross-checked against it.
+His lab is another matter: [hoganphysics/SLMTools](https://github.com/hoganphysics/SLMTools) is an actively maintained, MIT-licensed Julia implementation of the paper's beam-shaping methods. `contrib/slmsuite/transport_seed.py` was written independently from the paper before I knew SLMTools existed, and has since been cross-checked against it on identical inputs: phase gradients agree to 15 percent RMS, both seeds give zero in-support vortices, both converge to identical results after refinement, and a translation control on their output in our convention measures 0.999 of the expected blaze. The harness is `contrib/slmsuite/crosscheck_slmtools.jl` and `.py`.
 
 ## License
 

@@ -31,6 +31,16 @@ vortex-free far field: an earlier version of this solver returned a perfectly cu
 phase whose far field carried 519 vortices, because the map it encoded was wrong. The zero
 counts below are measured, not derived.
 
+**Cross-checked against the reference implementation.** On identical inputs, replicated
+across languages to 6e-17, SLMTools' `otPhase` and this implementation agree to 15 percent
+RMS in phase gradient with 0.167 rad residual phase std, both produce zero in-support
+vortices as seeds, and after 100 GS iterations they converge to identical results,
+efficiency 0.952 and ripple 0.170 against 0.171. A translation control on their output
+measured in this implementation's convention gives a blaze ratio of 0.999. Their
+full-resolution seed is modestly better before refinement, efficiency 0.961 against 0.938
+for the coarse-grid seed here, and the difference vanishes after GS. Harness attached as
+`crosscheck_slmtools.jl` and `crosscheck_slmtools.py`.
+
 **Method.** 256 px SLM padded to 512, Gaussian illumination, 50 iterations, six algorithms
 against a flat-top and a ring, each plain and as MRAF with a `nan` noise region: 24
 configurations. `vortices` is your `analysis.image_vortices` winding map counted inside the
