@@ -11,7 +11,7 @@ one, so I would want someone with hardware for that half.
 
 on your question. I could not answer it honestly until the removal actually applied, and
 on main it still does not when you use it as a callback, because the loop recomputes
-`phase_ff` from the farfield right after the callback returns. fix and numbers in #NNN.
+`phase_ff` from the farfield right after the callback returns. fix and numbers in #208.
 with that in, GS 50 iterations, 256 px SLM, 512 px farfield, removal every 10 iterations:
 
 | target | arm | vortices | ripple | eff | time |

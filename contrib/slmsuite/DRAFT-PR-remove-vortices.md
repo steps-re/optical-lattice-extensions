@@ -51,9 +51,10 @@ one caveat: fewer vortices is not free here. ripple goes up and efficiency goes 
 all three rows above. the callback does what it says now, but it is a trade, and that
 might be worth a line in the docstring.
 
-`tests/holography` is 8 failed, 66 passed, 6 skipped on this branch against 8 failed,
-65 passed on 42a9b4b. only the new test differs. the failures are pre-existing on my
-machine, mostly missing `pytest-benchmark` and hardware fixtures.
+`tests/holography` is 8 failed, 66 passed, 6 skipped, 11 errors on this branch against
+8 failed, 65 passed, 6 skipped, 11 errors on 42a9b4b. only the new test differs. the
+failures and errors are pre-existing on my machine, mostly missing `pytest-benchmark`
+and hardware fixtures.
 
 repro: [`benchmark_callback.py`](https://github.com/steps-re/optical-lattice-extensions/blob/main/contrib/slmsuite/benchmark_callback.py),
 run against stock main.
@@ -67,4 +68,4 @@ found with AI assistance, checked against the source and the numbers above.
 > #207 got the plotting half of this. the callback half is still there: the loop
 > recomputes `phase_ff` from the farfield in `_gs_farfield_routines` after the callback
 > returns, so the removal is thrown away in the same iteration and the GS result does
-> not move. one-line fix and a test in #NNN.
+> not move. one-line fix and a test in #208.
