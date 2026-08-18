@@ -1,4 +1,8 @@
-# Draft reply on holodyne/slmsuite#206 (NOT posted, queued for 2026-08-17 evening)
+# Draft reply on holodyne/slmsuite#206 (NOT posted)
+
+HELD until #208 is resolved. This cites #208, which is now a draft with a known defect.
+Corrected 2026-08-18 after adversarial review: removed the non-reproducible equal-wall-clock
+row, dropped single-run wall-clock precision, and fixed three overstated claims.
 
 ---
 
@@ -11,26 +15,41 @@ one, so I would want someone with hardware for that half.
 
 on your question. I could not answer it honestly until the removal actually applied, and
 on main it still does not when you use it as a callback, because the loop recomputes
-`phase_ff` from the farfield right after the callback returns. fix and numbers in #208.
-with that in, GS 50 iterations, 256 px SLM, 512 px farfield, removal every 10 iterations:
+`phase_ff` from the farfield right after the callback returns. I opened #208 for that but
+have since moved it to draft, since the patch there operates on a stale `phase_ff` and
+makes WGS-Leonardo and WGS-Kim worse than no callback at all. so read the numbers below as
+"quadratic plus a removal that is genuinely applied under GS", not as an endorsement of
+that patch.
 
-| target | arm | vortices | ripple | eff | time |
-|---|---|---|---|---|---|
-| flat-top | quadratic | 32 | 0.340 | 0.959 | 0.31 s |
-| flat-top | quadratic + remove_vortices | 6 | 0.537 | 0.904 | 1.38 s |
-| flat-top | transport | 0 | 0.169 | 0.981 | 0.70 s |
-| flat-top | quadratic + rv, equal wall clock (61 iters) | 32 | 0.475 | 0.931 | 1.77 s |
-| flat-top MRAF | quadratic | 24 | 0.253 | 0.815 | 0.22 s |
-| flat-top MRAF | quadratic + remove_vortices | 6 | 0.458 | 0.736 | 1.30 s |
-| flat-top MRAF | transport | 0 | 0.172 | 0.978 | 0.57 s |
-| ring MRAF | quadratic | 8 | 0.367 | 0.823 | 0.21 s |
-| ring MRAF | quadratic + remove_vortices | 4 | 0.639 | 0.752 | 0.63 s |
-| ring MRAF | transport | 4 | 0.369 | 0.823 | 0.49 s |
+GS 50 iterations, 256 px SLM, 512 px farfield, removal every 10 iterations in the
+`+ remove_vortices` arms:
 
-on the flat tops the seed wins on all three numbers and still comes out faster, since
-the removal runs about 0.2 s per call at this size and the seed is 0.38 s once. the
-removal also trades ripple and efficiency away to get the vortex count down, which the
-seed does not. on the ring the two are about even.
+| target | arm | vortices | ripple | eff |
+|---|---|---|---|---|
+| flat-top | quadratic | 32 | 0.340 | 0.959 |
+| flat-top | quadratic + remove_vortices | 6 | 0.537 | 0.904 |
+| flat-top | transport | 0 | 0.169 | 0.981 |
+| flat-top MRAF | quadratic | 24 | 0.253 | 0.815 |
+| flat-top MRAF | quadratic + remove_vortices | 6 | 0.458 | 0.736 |
+| flat-top MRAF | transport | 0 | 0.172 | 0.978 |
+| ring MRAF | quadratic | 8 | 0.367 | 0.823 |
+| ring MRAF | quadratic + remove_vortices | 4 | 0.639 | 0.752 |
+| ring MRAF | transport | 4 | 0.369 | 0.823 |
+
+on the flat tops the seed wins on all three numbers. the removal trades ripple and
+efficiency away to get the vortex count down, which the seed does not. on the ring the two
+are about even.
+
+I dropped the timings I had in here. they were single runs on a laptop and they moved by
+about a factor of two when I re-ran them, so the seconds were not worth the digits I gave
+them. the ratios were stable: the removal costs roughly three to five times a bare GS run
+of the same length, and the seed costs roughly one bare run. I also had an "equal wall
+clock" row, which was the direct answer to your cost question, and I have taken it out. the
+iteration budget was set by an inline timing probe, so it drifts with machine load, and
+sweeping the budget by hand gives ripple anywhere from 0.34 at 59 iterations to 0.56 at 70,
+with the 61 I happened to publish sitting at 0.475. that is noise I presented as a result,
+and it was the row most flattering to my own method. I cannot separate the two on cost with
+what I have.
 
 your point about the fraction of the farfield turned out to be the whole story. same SLM
 and farfield, 50 iterations, sweeping the top-hat size:
@@ -42,15 +61,16 @@ and farfield, 50 iterations, sweeping the top-hat size:
 | 9.8% | 32 | 0 | 0.340 | 0.169 |
 | 22.0% | 182 | 0 | 0.331 | 0.143 |
 
-at 0.6%, which is where the good experimental top hats live, quadratic is already
-vortex-free and the seed buys nothing. ripple is even a hair worse. crossover is around
-2%. so this is really about large-area targets rather than top hats in general, and I
-should have said so in the first post.
+at the smallest size I swept, 0.6% of the farfield, quadratic is already vortex-free and
+the seed buys nothing. ripple is even a hair worse. the crossover is somewhere between
+0.6% and 2.4% and I did not sample inside that gap. so this is really about large-area
+targets rather than top hats in general, and I should have said so in the first post.
 
-WGS-Kim is the same story. at 0.6% it is fine and has the best ripple of the four
-variants at 0.322. what I reported starts at 2.4% and gets worse with size, and Leonardo
-and Nogrette hold up better there, like you said. so that part of #205 is a note about
-running Kim outside what it was tuned for, not a bug.
+WGS-Kim is a similar story, though I overstated it before. the ripple blow-up I reported
+appears at 2.4% and is present at every larger size I tried, but it does not grow
+monotonically: 0.322, 7.390, 7.230, 3.289 across the four sizes. the vortex count does grow
+monotonically. so that part of #205 is a note about running Kim outside what it was tuned
+for, not a bug.
 
 | fraction | GS | WGS-Leonardo | WGS-Kim | WGS-Nogrette |
 |---|---|---|---|---|
@@ -61,6 +81,11 @@ running Kim outside what it was tuned for, not a bug.
 
 vortices inside the support, quadratic seed. transport is 0 in 15 of the 16 cells, the
 exception being WGS-Nogrette at 0.6% with 4.
+
+on "consider using one of the other WGS variants", you were right that Kim is the problem,
+but I should be precise about the rest: Nogrette holds up best of the four, and Leonardo is
+better than Kim but worse than plain GS at 9.8% and above. so it is really Nogrette rather
+than both.
 
 both tables come from
 [`benchmark_callback.py`](https://github.com/steps-re/optical-lattice-extensions/blob/main/contrib/slmsuite/benchmark_callback.py)
