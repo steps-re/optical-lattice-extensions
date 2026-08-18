@@ -33,10 +33,15 @@ identical to three decimals is what a no-op looks like. the removal itself is fi
 just does not survive the iteration:
 
 ```
-iter  9: vortices in phase_ff 102 -> 30, back to ~102 by the next call
-iter 19: vortices in phase_ff 118 -> 26, back to ~118 by the next call
-iter 29: vortices in phase_ff 122 -> 12, back to ~122 by the next call
+iter  9: vortices in phase_ff 102 -> 30
+iter 19: 118 -> 26
+iter 29: 122 -> 12
+iter 39: 122 -> 14
+iter 49: 128 -> 26
 ```
+
+each call knocks the count down and the next one finds it back where it was or higher,
+because the farfield the count is recomputed from was never touched.
 
 so this writes the corrected phase back into the farfield, where the `arctan2` will pick
 it up instead of throwing it away. amplitude is preserved. with `fixed_phase` on

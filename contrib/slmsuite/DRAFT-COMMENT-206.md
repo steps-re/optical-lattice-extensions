@@ -59,8 +59,8 @@ running Kim outside what it was tuned for, not a bug.
 | 9.8% | 32 | 72 | 125 | 33 |
 | 22.0% | 182 | 203 | 399 | 125 |
 
-vortices inside the support, quadratic seed. transport is 0 in every cell of that grid
-except one.
+vortices inside the support, quadratic seed. transport is 0 in 15 of the 16 cells, the
+exception being WGS-Nogrette at 0.6% with 4.
 
 both tables come from
 [`benchmark_callback.py`](https://github.com/steps-re/optical-lattice-extensions/blob/main/contrib/slmsuite/benchmark_callback.py)
