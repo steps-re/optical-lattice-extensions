@@ -1,4 +1,10 @@
-# Draft issue for holodyne/slmsuite (NOT posted, queued for 2026-08-19 evening)
+# POSTED 2026-08-27 as holodyne/slmsuite#209
+# https://github.com/holodyne/slmsuite/issues/209
+#
+# All three claims re-verified against stock main @42a9b4b immediately before posting
+# (upstream had not moved since 8/18). reset_phase(quadratic_phase=True) and the
+# flags route both raise ValueError; optimize(quadratic_phase=True) stores the flag
+# and leaves the phase untouched.
 
 Title: **the analytic quadratic seed is unreachable on a default `Hologram`: `reset_phase` raises, `optimize` silently ignores it**
 
